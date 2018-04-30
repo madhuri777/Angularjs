@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Third AngularJs</title>
+</head>
+<body>
+  <div ng-init="myFavLang=[{name:'PHP',extension:'.php'},{name:'JAVA',extension:'.java'},{name:'JAVASCRIPT',extension='.js'},{name:'C',extension:'.c'}]">
+    <!-- <p ng-repeat="language in myFavLang"> -->
+
+<div ng-repeat="language in myFavLang">
+      Name:{{ language.name }}
+      Extension:{{ language.extension }}
+    </div>
+  </div>
+</body>
+<script src="bower_components/angular/angular.js"></script>
+</html>

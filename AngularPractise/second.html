@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Second</title>
+  <script src="/home/bridgeit/AngularApp/bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+  <div ng-app="" ng-init="quantity=1;price=1;mycolor='yellow'">
+  <p>Enter values in the inpute field</p>
+  <p>Quantity:<input type="number" ng-model="quantity"></p>
+  <p>Price :<input type="number" ng-model="price"></p>
+  <p>Total Price :{{quantity*price}}</p><br>
+  <p>Simple Ecxpression Example</p>
+  <p>Expresion is:{{5+5}}</p>
+  <br><p>following is color style</p>
+  <input style="background-color:{{mycolor}}" ng-model="mycolor" value={{mycolor}}>
+  </p>
+  </div>
+  <div  ng-init="myFavLang=[{name:'PHP',extension:'.php'},{name:'JAVA',extension:'.java'},{name:'JAVASCRIPT',extension='.js'},{name:'C',extension:'.c'}]">
+    <p ng-repeat="language in myFavLang">
+      Name:{{ language.name }}<br>
+      Extension:{{ language.extension }}<br></p>
+  </div>
+</body>
+</html>

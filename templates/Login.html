@@ -1,0 +1,36 @@
+ <div>
+    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
+      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+        <md-toolbar>
+          <div class="md-toolbar-tools">
+            <h2><span>Login Form</span></h2>
+          </div>
+        </md-toolbar>
+        <md-card-content>
+          <form name="Form">
+            <div>
+            <md-input-container>
+              <label>Email-id</label>
+              <div class="form-group" ng-class="{'has-error': Form.email.$invalid && Form.email.$dirty, 'has-success': Form.email.$valid }">
+              <input type="text" name="email" placeholder="email-id"/>
+              <p class="help-block" ng-if="Form.email.$invalid && Form.email.$dirty">Please Enter a valid email address</p>
+            </div>
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+               <div class="form-group" ng-class="{'has-error': Form.password.$invalid && Form.password.$dirty, 'has-success': Form.password.$valid}">
+              <input type="password" name="password" placeholder="password"/>
+              <p class="help-block" ng-if="Form.password.$invalid && Form.password.$dirty">Please Enter at least 8 characters</p>
+              </div>
+            </md-input-container>
+          </div>
+            <md-action>
+               <md-button class="md-raised md-primary" ng-disabled="Form.emails.$invalid || Form.password.$invalid">Login</md-button>
+            <!-- <md-button  class="md-raised md-primary" ng-click="submit()"> Login</md-button> -->
+            <md-button class="md-raised md-primary"> Sign Up</md-button>
+          </md-action>
+          </form>
+        </md-card-content>
+      </md-card>
+    </md-content>
+</div>
