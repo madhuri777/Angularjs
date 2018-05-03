@@ -11,23 +11,24 @@
             <div>
             <md-input-container>
               <label>Email-id</label>
-              <div class="form-group" ng-class="{'has-error': Form.email.$invalid && Form.email.$dirty, 'has-success': Form.email.$valid }">
-              <input type="text" name="email" placeholder="email-id"/>
-              <p class="help-block" ng-if="Form.email.$invalid && Form.email.$dirty">Please Enter a valid email address</p>
-            </div>
-            </md-input-container>
-            <md-input-container>
-              <label>Password</label>
-               <div class="form-group" ng-class="{'has-error': Form.password.$invalid && Form.password.$dirty, 'has-success': Form.password.$valid}">
-              <input type="password" name="password" placeholder="password"/>
-              <p class="help-block" ng-if="Form.password.$invalid && Form.password.$dirty">Please Enter at least 8 characters</p>
+              <input required type="email" name="Email" ng-model="email" ng-pattern="/(^[\w]+@+[a-zA-Z_]+\.[a-zA-Z]{3})$/">
+              <div ng-show="Form.email.$error">
+              <div ng-show="Form.email.$error.required" ng-message="required">Email is required</div>
+              <div ng-show="Form.email.$error.pattern"  ng-message="pattern">Invalid email adress.</div>
               </div>
             </md-input-container>
-          </div>
+
+            <md-input-container>
+              <label>Password</label>
+              <input required type="password" name="password"  ng-model="password" minlength="8" maxlength="12"/>
+              <div ng-messages="Form.email.$error" role="alert">
+              <div ng-message-exp="['required','minlength','maxlength']">password length should be min 8.</div>
+              </div>
+            </md-input-container>
+            </div>
             <md-action>
-               <md-button class="md-raised md-primary" ng-disabled="Form.emails.$invalid || Form.password.$invalid">Login</md-button>
-            <!-- <md-button  class="md-raised md-primary" ng-click="submit()"> Login</md-button> -->
-            <md-button class="md-raised md-primary"> Sign Up</md-button>
+            <md-button  class="md-raised md-primary" ng-click="home()" ng-disabled="!Form.$valid"> Login</md-button>
+            <!-- <md-button class="md-raised md-primary"> Sign Up</md-button>   ,  'pattern' -->
           </md-action>
           </form>
         </md-card-content>

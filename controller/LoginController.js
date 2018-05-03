@@ -1,17 +1,14 @@
 app.controller('loginController',function($scope,$state){
-  var emailPattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-var passwordPattern=/^[a-z]+$/;
-var email=document.getElementById("email");
-var password=document.getElementById("password");
-   // $scope.isDisabled = false;
+
+  var email=$scope.email;
+  var password=$scope.password;
   $scope.home=function(){
-    if(email.value.match(emailPattern) && password.value.match(passwordPattern))
+    if(email!='' &&password!='')
     {
-     // $scope.isDisabled = true;
-      $state.go('home');
+       $state.go('home');
     }
     else{
-      document.getElementById("error").innerHTML="<span class='errorMessage'>*Enter Correct Username/Password</span>";
+     document.getElementById("error").innerHTML="<span class='errorMessage'>*Enter Correct Username/Password</span>";
     }
   };
 
