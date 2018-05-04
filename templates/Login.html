@@ -1,37 +1,40 @@
- <div>
-    <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" ng-cloak="ng-cloak" class="login-form">
-      <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
-        <md-toolbar>
-          <div class="md-toolbar-tools">
-            <h2><span>Login Form</span></h2>
-          </div>
-        </md-toolbar>
-        <md-card-content>
-          <form name="Form">
-            <div>
+<div>
+  <md-content layout="row" layout-align="space-around" layout-padding="layout-padding" class="login-form">
+    <md-card flex="flex" flex-gt-sm="50" flex-gt-md="33">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2><span>Login Form</span></h2>
+        </div>
+      </md-toolbar>
+      <md-card-content>
+        <form name="Form">
+          <div>
             <md-input-container>
               <label>Email-id</label>
-              <input required type="email" name="Email" ng-model="email" ng-pattern="/(^[\w]+@+[a-zA-Z_]+\.[a-zA-Z]{3})$/">
-              <div ng-show="Form.email.$error">
-              <div ng-show="Form.email.$error.required" ng-message="required">Email is required</div>
-              <div ng-show="Form.email.$error.pattern"  ng-message="pattern">Invalid email adress.</div>
+              <input required type="email" name="Email" ng-model="email" ng-pattern="/(^[a-zA-Z]+@+[a-zA-Z_]+\.[a-zA-Z]{2,3})$/">
+              <!-- <div ng-message="Form.email.$error">
+              <div ng-message="required" ng-show="Form.email.$error.required" >Email is required</div>
+              <div ng-message="pattern" ng-show="Form.email.$error.pattern"  >Invalid email adress.</div>
+              </div> -->
+              <div ng-messages="Form.email.$error">
+                <div ng-message-exp="['required','pattern']">Invalid email address,please re-enter mail id.</div>
               </div>
             </md-input-container>
 
             <md-input-container>
               <label>Password</label>
-              <input required type="password" name="password"  ng-model="password" minlength="8" maxlength="12"/>
-              <div ng-messages="Form.email.$error" role="alert">
-              <div ng-message-exp="['required','minlength','maxlength']">password length should be min 8.</div>
+              <input required type="password" name="password" ng-model="password" minlength="8" maxlength="12" />
+              <div ng-messages="Form.email.$error">
+                <div ng-message-exp="['required','minlength','maxlength']">password length should be min 8.</div>
               </div>
             </md-input-container>
-            </div>
-            <md-action>
-            <md-button  class="md-raised md-primary" ng-click="home()" ng-disabled="!Form.$valid"> Login</md-button>
+          </div>
+          <md-action>
+            <md-button class="md-raised md-primary" ng-click="home()" ng-disabled="!Form.$valid"> Login</md-button>
             <!-- <md-button class="md-raised md-primary"> Sign Up</md-button>   ,  'pattern' -->
           </md-action>
-          </form>
-        </md-card-content>
-      </md-card>
-    </md-content>
+        </form>
+      </md-card-content>
+    </md-card>
+  </md-content>
 </div>

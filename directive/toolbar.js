@@ -1,5 +1,5 @@
-app.directive('toolbar',function(){
-  return{
-    templateUrl:'templates/toolbar.html'
+app.directive('toolbar', function() {
+  return {
+    templateUrl: 'templates/toolbar.html'
   };
 });
