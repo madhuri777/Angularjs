@@ -1,0 +1,25 @@
+<!-- <div style="display:inline-block;" > -->
+  <md-content class="md-padding" >
+      <div layout='row' layout-align='space-around center' layout-wrap>
+        <div ng-repeat="x in jsonData" flex-gt-md="30" >
+        <md-card>
+            <md-card-title>
+              <md-card-title-text >
+                <span class="md-headline">Card with image</span>
+              </md-card-title-text>
+              <md-card-title-media>
+              <img src="{{x.image.small}}" class="md-media-md card-media"  alt="image caption"></img>
+              </md-card-title-media>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="end center">
+              <md-button>Buy</md-button>
+              <md-button>Action 2</md-button>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </div>
+  </span>
+  </md-content>
+
+  <!-- layout-xs="column" layout="row" -->
+<!-- </div> -->

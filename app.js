@@ -10,6 +10,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: 'templates/Home.html',
       controller: 'homeController'
+    })
+    .state('home.dashboard',{
+      url:'/home.dashboard',
+      templateUrl:'templates/dashboard.html',
+      //controller:'dashboardController'
     });
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('login');
 });
