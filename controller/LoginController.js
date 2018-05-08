@@ -1,14 +1,18 @@
 app.controller('loginController', function($scope, $state) {
-
-  var email = $scope.email;
-  var password = $scope.password;
-  $scope.home = function() {
-    if (email != '' && password != '') {
-      $state.go('home');
-    } else {
-      // document.getElementById("error").innerHTML = "<span class='errorMessage'>*Enter Correct Email/Password</span>";
-       $scope.error="Invalid email/password";
-    }
+  $scope.home = function(email,password) {
+  var mailid=$scope.email;
+  var passwd=$scope.password;
+  console.log(mailid);
+  console.log(passwd);
+   $state.go('home');
+     //if (mailid != '' && passwd!= '') {
+    //   console.log(mailid);
+    //   console.log(passwd);
+    //   //$state.go('home');
+    //   $state.transitionTo('home');
+    // } else {
+    //    $scope.error="Invalid email/password";
+    // }
   };
 
 });

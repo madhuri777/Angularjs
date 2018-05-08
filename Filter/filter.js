@@ -1,6 +1,6 @@
 app.filter('unique', function() {
   return function(collection, keyname) {
-    
+
     var output = [],
       keys = [];
     angular.forEach(collection, function(item) {

@@ -1,25 +1,28 @@
-<!-- <div style="display:inline-block;" > -->
-  <md-content class="md-padding" >
-      <div layout='row' layout-align='space-around center' layout-wrap>
-        <div ng-repeat="x in jsonData" flex-gt-md="30" >
-        <md-card>
-            <md-card-title>
-              <md-card-title-text >
-                <span class="md-headline">Card with image</span>
-              </md-card-title-text>
-              <md-card-title-media>
-              <img src="{{x.image.small}}" class="md-media-md card-media"  alt="image caption"></img>
-              </md-card-title-media>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-              <md-button>Buy</md-button>
-              <md-button>Action 2</md-button>
-            </md-card-actions>
-          </md-card>
-        </div>
-      </div>
-  </span>
-  </md-content>
-
-  <!-- layout-xs="column" layout="row" -->
-<!-- </div> -->
+<div  style="padding-top:3.5%; padding-left:4%;">
+<md-content class="md-padding">
+  <div layout='row' layout-align='space-center' layout-wrap flex-offset="20">
+    <div ng-repeat="x in jsonData"  flex-gt-md="30">
+      <md-card>
+        <img ng-src="{{x.image.small}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{x.name}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p><b>manufacturer:</b>{{x.specs.manufacturer}}</p>
+          <p><b>storage:</b>{{x.specs.storage}}</p>
+          <p><b>os:</b>{{x.specs.os}}</p>
+          <p><b>camera:</b>{{x.specs.camera}}</p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-primary md-raised">Buy Now</md-button>
+          <md-button class="md-primary md-raised" ng-click="showTabDialog($event)">View</md-button>
+          <p style="padding-left:18%;"><b>$</b>{{x.price}}</p>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+  <!-- </span> -->
+</md-content>
+</div>

@@ -1,31 +1,30 @@
-<div>
-  <md-sidenav class="md-sidenav-left" md-component-id="left">
-    <md-toolbar>
+<md-sidenav class="md-sidenav-left" md-disable-backdrop="false" md-component-id="left" style="position:fixed; margin-top:64px;">
 
-      <h1 class="md-toolbar-tools">Features of Mobiles</h1>
-    </md-toolbar>
-    <md-subheader>
-      <h3>Manufacturer</h3></md-subheader>
-    <div ng-repeat="x in jsonData |unique:'manufacturer'">
-      <md-checkbox>{{x.specs.manufacturer}}</md-checkbox>
-    </div>
+  <md-toolbar class="md-toolbar-tools">
+    <h1 class="md-toolbar-tools">Features of Mobiles</h1>
+  </md-toolbar>
+  <md-subheader>
+    <h3>Manufacturer</h3></md-subheader>
+  <div ng-repeat="x in jsonData |unique:'manufacturer'" layout-align="center">
+    <md-checkbox ng-click="toggle(item,selected)">{{x.specs.manufacturer}}</md-checkbox>
+  </div>
 
-    <md-subheader>
-      <h3>Storage</h3></md-subheader>
-    <div ng-repeat="x in jsonData |unique:'storage'">
-      <md-checkbox>{{x.specs.storage}}</md-checkbox>
-    </div>
+  <md-subheader>
+    <h3>Storage</h3></md-subheader>
+  <div ng-repeat="x in jsonData |unique:'storage'">
+    <md-checkbox>{{x.specs.storage}}</md-checkbox>
+  </div>
 
-    <md-subheader>
-      <h3>OS</h3></md-subheader>
-    <div ng-repeat="x in jsonData |unique:'os'">
-      <md-checkbox>{{x.specs.os}}</md-checkbox>
-    </div>
+  <md-subheader>
+    <h3>OS</h3></md-subheader>
+  <div ng-repeat="x in jsonData |unique:'os'">
+    <md-checkbox>{{x.specs.os}}</md-checkbox>
+  </div>
 
-    <md-subheader>
-      <h3>Camera</h3></md-subheader>
-    <div ng-repeat="x in jsonData |unique:'camera'">
-      <md-checkbox>{{x.specs.camera}}</md-checkbox>
-    </div>
-  </md-sidenav>
-</div>
+  <md-subheader>
+    <h3>Camera</h3></md-subheader>
+  <div ng-repeat="x in jsonData |unique:'camera'">
+    <md-checkbox>{{x.specs.camera}}</md-checkbox>
+  </div>
+  <!-- </md-sidenav-layout> -->
+</md-sidenav>
