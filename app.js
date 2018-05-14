@@ -14,7 +14,17 @@ app.config(function($stateProvider, $urlRouterProvider) {
     .state('home.dashboard',{
       url:'/home.dashboard',
       templateUrl:'templates/dashboard.html',
-      //controller:'dashboardController'
-    });
+      controller:'dashboardcontrolr'
+    })
+    .state('deletpage',{
+      url:'/deletpage',
+      templateUrl:'templates/deletcard.html',
+      controller:'deletcard'
+  })
+     .state('conform',{
+      url:'/conformpage',
+      templateUrl:'templates/view.html',
+     controller:'deletecontrl'
+     });
   $urlRouterProvider.otherwise('login');
 });

@@ -8,4 +8,5 @@ app.service('jsonRead', function($http) {
     // });
   }
   };
+  //this.array=[];
 });

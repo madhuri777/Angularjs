@@ -1,10 +1,12 @@
 app.controller('dashboardcontrolr', function($scope, $mdDialog) {
-      $scope.showAdvanced = function(ev) {
+      $scope.showAdvanced = function(ev,items) {
         $mdDialog.show({
+          locals:{item:items},
             controller: DialogController,
             templateUrl: 'templates/dialogBox.html',
             parent: angular.element(document.body),
             targetEvent: ev,
+
             clickOutsideToClose: true,
             fullscreen: $scope.customFullscreen
           })
@@ -13,11 +15,20 @@ app.controller('dashboardcontrolr', function($scope, $mdDialog) {
           }, function() {
             $scope.status = 'You cancelled the dialog.';
           });
+          // console.log("items ",items);
+          // console.log("item ",item);
       };
 
-      function DialogController($scope, $mdDialog) {
+      function DialogController($scope, $mdDialog,item) {
+        $scope.item=item;
         $scope.hide = function() {
           $mdDialog.hide();
-        };
+        }
+        $scope.cancel = function() {
+        $mdDialog.cancel();
       }
+
+    };
+
+
       });

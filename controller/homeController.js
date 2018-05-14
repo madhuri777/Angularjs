@@ -1,4 +1,4 @@
-app.controller('homeController', function($scope, $mdSidenav,jsonRead,$state) {
+app.controller('homeController', function($scope, $mdSidenav,jsonRead,$state,$rootScope) {
   $scope.toggleLeft = buildToggler('left');
 
   function buildToggler(componentId) {
@@ -8,9 +8,32 @@ app.controller('homeController', function($scope, $mdSidenav,jsonRead,$state) {
   };
       $scope.readjson=jsonRead.read();
     $scope.readjson.then(function(response){
-      //  console.log($scope.jsonFile);
       $scope.jsonData=response.data;
+      localStorage.setItem('jsonData', JSON.stringify($scope.jsonData));
+      // $rootScope.saved = JSON.parse(localStorage.getItem('todos'));
+      // console.log("saved ", $rootScope.saved);
     })
     $state.go('home.dashboard');
 
+
+   $scope.manufacturerArray=[];
+   //console.log($scope.manufacturerArray);
+   $scope.storageArray=[];
+   $scope.osArray=[];
+   $scope.cameraArray=[];
+
+   $scope.toggle = function (item, list) {
+       var idx = list.indexOf(item);
+       if (idx > -1) {
+         list.splice(idx, 1);
+       }
+       else {
+         list.push(item);
+       }
+     };
+
+     $scope.exists = function (item, list) {
+       return list.indexOf(item) > -1;
+     };
+  //  $state.go('deletpage');
 });

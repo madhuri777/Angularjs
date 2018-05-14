@@ -5,26 +5,26 @@
   </md-toolbar>
   <md-subheader>
     <h3>Manufacturer</h3></md-subheader>
-  <div ng-repeat="x in jsonData |unique:'manufacturer'" layout-align="center">
-    <md-checkbox ng-click="toggle(item,selected)">{{x.specs.manufacturer}}</md-checkbox>
+  <div ng-repeat="x in jsonData |unique:'manufacturer'" layout-align="center" style="padding-left:20px;">
+    <md-checkbox ng-click="toggle(x.specs.manufacturer,manufacturerArray)">{{x.specs.manufacturer}}</md-checkbox>
   </div>
 
   <md-subheader>
     <h3>Storage</h3></md-subheader>
-  <div ng-repeat="x in jsonData |unique:'storage'">
-    <md-checkbox>{{x.specs.storage}}</md-checkbox>
+  <div ng-repeat="x in jsonData |unique:'storage'"  style="padding-left:20px;">
+    <md-checkbox ng-click="toggle(x.specs.storage,storageArray)">{{x.specs.storage}}</md-checkbox>
   </div>
 
   <md-subheader>
     <h3>OS</h3></md-subheader>
-  <div ng-repeat="x in jsonData |unique:'os'">
-    <md-checkbox>{{x.specs.os}}</md-checkbox>
+  <div ng-repeat="x in jsonData |unique:'os'" style="padding-left:20px;">
+    <md-checkbox ng-click="toggle(x.specs.os,osArray)">{{x.specs.os}}</md-checkbox>
   </div>
 
   <md-subheader>
     <h3>Camera</h3></md-subheader>
-  <div ng-repeat="x in jsonData |unique:'camera'">
-    <md-checkbox>{{x.specs.camera}}</md-checkbox>
+  <div ng-repeat="x in jsonData |unique:'camera'" style="padding-left:20px;">
+    <md-checkbox ng-click="toggle(x.specs.camera,cameraArray)">{{x.specs.camera}}</md-checkbox>
   </div>
   <!-- </md-sidenav-layout> -->
 </md-sidenav>

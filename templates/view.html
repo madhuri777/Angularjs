@@ -1,0 +1,31 @@
+
+<!-- <div  ng-cloak > -->
+<div  style="padding-top:3.5%; ">
+<md-content class="md-padding">
+  <div layout='row' layout-align='space-center'  layout-wrap flex-offset="10">
+    <div  flex-gt-md="30">
+      <md-card>
+        <img ng-src="{{values.image.small}}" class="md-card-image" alt="Washed Out">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{values.name}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p><b>manufacturer:</b>{{values.specs.manufacturer}}</p>
+          <p><b>storage:</b>{{values.specs.storage}}</p>
+          <p><b>os:</b>{{values.specs.os}}</p>
+          <p><b>camera:</b>{{values.specs.camera}}</p>
+          <p><b>description:</b>{{values.description}}</p></p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <p ><b>$</b>{{values.price}}</p>
+          <md-button class="md-primary md-raised" ng-click="undo()">Undo</md-button>
+          <md-button class="md-primary md-raised" ng-click="delete(values)">delete</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </div>
+</md-content>
+</div>
+<!-- </div> -->
