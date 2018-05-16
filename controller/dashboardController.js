@@ -1,5 +1,6 @@
 app.controller('dashboardcontrolr', function($scope, $mdDialog) {
       $scope.showAdvanced = function(ev,items) {
+        console.log("event ",ev);
         $mdDialog.show({
           locals:{item:items},
             controller: DialogController,
@@ -7,7 +8,7 @@ app.controller('dashboardcontrolr', function($scope, $mdDialog) {
             parent: angular.element(document.body),
             targetEvent: ev,
 
-            clickOutsideToClose: true,
+            clickOutsideToClose: false,
             fullscreen: $scope.customFullscreen
           })
           .then(function(answer) {

@@ -10,8 +10,7 @@ app.controller('homeController', function($scope, $mdSidenav,jsonRead,$state,$ro
     $scope.readjson.then(function(response){
       $scope.jsonData=response.data;
       localStorage.setItem('jsonData', JSON.stringify($scope.jsonData));
-      // $rootScope.saved = JSON.parse(localStorage.getItem('todos'));
-      // console.log("saved ", $rootScope.saved);
+
     })
     $state.go('home.dashboard');
 
@@ -26,6 +25,7 @@ app.controller('homeController', function($scope, $mdSidenav,jsonRead,$state,$ro
        var idx = list.indexOf(item);
        if (idx > -1) {
          list.splice(idx, 1);
+         console.log("list ",list);
        }
        else {
          list.push(item);

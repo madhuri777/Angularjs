@@ -7,13 +7,26 @@ md-dialog {
   position: relative;
 }
 
-md-dialog-content {
+/* md-dialog-content {
   font-style: oblique;
   padding-left: 25px;
-}
+} */
 #next{
 border-radius: 5px;
 float: right;
 min-width: 20px;
 max-width: 20%;
 }
+.card{
+  /* margin-top: 2.5%;
+  height: 650px; */
+  position: relative;
+}
+/* .md-card {
+  overflow: hidden;
+} */
+
+/* .md-card-actions {
+  width: 100%;
+  height: auto;
+} */

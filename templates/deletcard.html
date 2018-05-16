@@ -1,32 +1,35 @@
-<div  ng-cloak>
-<div  style="padding-top:3.5%; ">
-<md-content class="md-padding">
-  <div layout='row' layout-align='space-center'  layout-wrap flex-offset="10">
-    <div ng-repeat="x in saved"  flex-gt-md="30">
-    
-      <md-card>
-        <!-- <img ng-src="{{x.image.small}}" class="md-card-image" alt="Washed Out"> -->
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{x.name}}</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-          <p><b>manufacturer:</b>{{x.specs.manufacturer}}</p>
-          <p><b>storage:</b>{{x.specs.storage}}</p>
-          <p><b>os:</b>{{x.specs.os}}</p>
-          <p><b>camera:</b>{{x.specs.camera}}</p>
-          <p><b>description:</b>{{x.description}}</p></p>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-          <!-- <md-button class="md-primary md-raised">Buy Now</md-button> -->
-          <md-button class="md-primary md-raised" ng-click="remove(x)">Remove</md-button>
-          <p style="padding-left:18%;"><b>$</b>{{x.price}}</p>
-        </md-card-actions>
-      </md-card>
-    </div>
+<div ng-cloak>
+  <div style="padding-top:3.5%; ">
+    <!-- <md-content class="md-padding"> -->
+      <div layout='row' layout-align='space-center' layout-wrap flex-offset="10">
+        <div ng-repeat="x in nondeletedList" flex-gt-md="30">
+
+          <md-card>
+            <!-- <img ng-src="{{x.image.small}}" class="md-card-image" alt="Washed Out"> -->
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">{{x.name}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+              <p><b>manufacturer:</b>{{x.specs.manufacturer}}</p>
+              <p><b>storage:</b>{{x.specs.storage}}</p>
+              <p><b>os:</b>{{x.specs.os}}</p>
+              <p><b>camera:</b>{{x.specs.camera}}</p>
+              <p><b>description:</b>{{x.description}}</p>
+              </p>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+              <!-- <md-button class="md-primary md-raised">Buy Now</md-button> -->
+              <md-button class="md-primary md-raised" ng-click="remove(x,deletedList,nondeletedList)">Remove</md-button>
+              <p style="padding-left:18%;"><b>$</b>{{x.price}}</p>
+            </md-card-actions>
+          </md-card>
+        </div>
+      </div>
+      <!-- </span> -->
+      <md-button id="next" class="md-primary md-raised" ui-sref="conform">Trash</md-button>
+
+    <!-- </md-content> -->
   </div>
-  <!-- </span> -->
-</md-content>
-</div>
 </div>
